@@ -14,5 +14,18 @@ namespace VAOTracker.Controllers
       return View(vendor);
     }
 
+    [HttpGet("/vendors/{vendorID}/orders/{orderID}")]
+    public ActionResult Show(int vendorID, int orderID)
+    {
+      Order order = Order.Find(orderID);
+      Vendor vendor = Vendor.Find(vendorID);
+      Dictionary<string, object> model = new()
+      {
+          { "vendor", vendor },
+          { "order", order }
+      };
+      return View(model);
+    }
+
   }
 }

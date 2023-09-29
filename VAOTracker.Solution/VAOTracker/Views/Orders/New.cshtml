@@ -11,7 +11,7 @@
 
   <h1>Add an Order for @Model.Name</h1>
 
-  <form action="/vendor/@Model.IDNumber/orders" method="post">
+  <form action="/vendors/@Model.IDNumber/orders" method="post">
     <input id="vendorID" name="vendorID" type="hidden" value="@Model.IDNumber">
     <label for="orderTitle">Order Title: </label>
     <input id="orderTitle" name="orderTitle" type="text">
@@ -28,7 +28,7 @@
     <button type="submit">Add Order</button>
   </form>
 
-  <p><a href="/vendor/@Model.IDNumber">Back to @Model.Name</a></p>
+  <p><a href="/vendors/@Model.IDNumber">Back to @Model.Name</a></p>
   <p><a href="/vendors">Back to Vendors</a></p>
   <p><a href="/">Return to Main Page</a></p>
 
