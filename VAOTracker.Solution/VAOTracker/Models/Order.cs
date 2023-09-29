@@ -36,18 +36,5 @@ namespace VAOTracker.Models
     {
       _listOfOrders.Clear();
     }
-
-    //This code may not be working. MVC throwing ArgumentOutOfRangeExceptions and other errors.
-    public void RemoveOrder()
-    {
-      _listOfOrders.Remove(this);
-    }
-
-    //Potential (unexplored) alternative to RemoveOrder code above.
-    // public static void RemoveOrder(int searchID)
-    // {
-    //   int indexToBeRemoved = searchID - 1;
-    //   _listOfOrders.RemoveAt(indexToBeRemoved);
-    // }
   }
 }

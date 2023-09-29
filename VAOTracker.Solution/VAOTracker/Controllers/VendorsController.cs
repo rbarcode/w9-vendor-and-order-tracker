@@ -50,19 +50,5 @@ namespace VAOTracker.Controllers
       model.Add("orders", vendorOrders);
       return View("Show", model);
     }
-
-    //Throwing ArgumentOutOfRange and other exceptions... This code is not working.
-    [HttpPost("/vendors/{vendorID}/delete")]
-    public ActionResult Destroy(int orderID, int vendorID)
-    {
-      Order order = Order.Find(orderID);
-      order.RemoveOrder();
-      Vendor selectedVendor = Vendor.Find(vendorID);
-      Dictionary<string, object> model = new();
-      List<Order> listOfOrders = selectedVendor.Orders;
-      model.Add("vendor", selectedVendor);
-      model.Add("orders", listOfOrders);
-      return View("Show", model);
-    }
   }
 }
