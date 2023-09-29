@@ -19,5 +19,23 @@ namespace VAOTracker.Controllers
     {
       return View();
     }
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName, string vendorDescription)
+    {
+      Vendor newVendor = new(vendorName, vendorDescription);
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("/vendors/{IDNumber}")]
+    public ActionResult Show(int IDNumber)
+    {
+      Dictionary<string, object> model = new();
+      Vendor selectedVendor = Vendor.Find(IDNumber);
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
+      model.Add("orders", vendorOrders);
+      return View(model);
+    }
   }
 }
