@@ -51,6 +51,7 @@ namespace VAOTracker.Controllers
       return View("Show", model);
     }
 
+    //Throwing ArgumentOutOfRange and other exceptions... This code is not working.
     [HttpPost("/vendors/{vendorID}/delete")]
     public ActionResult Destroy(int orderID, int vendorID)
     {

@@ -19,10 +19,10 @@
     <li>Date: @Model["order"].Date</li>
   </ul>
 
+  @* Throwing ArgumentOutOfRangeException and other errors... this code does not work *@
   <form action='/vendors/@Model["vendor"].IDNumber/delete' method='post'>
     <input id='vendorID' name='vendorID' type='hidden' value='@Model["vendor"].IDNumber'>
     <input id='orderID' name='orderID' type='hidden' value='@Model["order"].IDNumber'>
-
     <button type='submit'>Delete Order</button>
   </form>
 
