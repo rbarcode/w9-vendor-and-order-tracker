@@ -15,13 +15,13 @@
   <ul>
     <li>Title: @Model["order"].Title</li>
     <li>Description: @Model["order"].Description</li>
-    <li>Price: @Model["order"].Price</li>
+    <li>Price: $@Model["order"].Price</li>
     <li>Date: @Model["order"].Date</li>
   </ul>
 
-  <p><a href="/vendors/@Model.IDNumber">Back to @Model.Name</a></p>
-  <p><a href="/vendors">Back to Vendors</a></p>
-  <p><a href="/">Return to Main Page</a></p>
+  <p><a href='/vendors/@Model["vendor"].IDNumber'>Back to @Model["vendor"].Name</a></p>
+  <p><a href='/vendors'>Back to Vendors</a></p>
+  <p><a href='/'>Return to Main Page</a></p>
 
 </body>
 
