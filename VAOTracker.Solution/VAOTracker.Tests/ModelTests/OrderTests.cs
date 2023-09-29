@@ -152,5 +152,24 @@ namespace VAOTracker.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void RemoveOrder_RemovesSpecifiedOrderFromList_Void()
+    {
+      string title01 = "Test Title 01";
+      string title02 = "Test Title 02";
+      string description01 = "doughnuts";
+      string description02 = "muffins";
+      int price01 = 10;
+      int price02 = 8;
+      string date01 = "September 29, 2023";
+      string date02 = "October 31, 2023";
+      Order newOrder1 = new(title01, description01, price01, date01);
+      Order newOrder2 = new(title02, description02, price02, date02);
+      List<Order> testList = new() { newOrder2 };
+      List<Order> newList = Order.GetAll();
+      newOrder1.RemoveOrder();
+      CollectionAssert.AreEqual(testList, newList);
+    }
   }
 }

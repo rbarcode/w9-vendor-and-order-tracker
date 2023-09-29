@@ -19,6 +19,13 @@
     <li>Date: @Model["order"].Date</li>
   </ul>
 
+  <form action='/vendors/@Model["vendor"].IDNumber/delete' method='post'>
+    <input id='vendorID' name='vendorID' type='hidden' value='@Model["vendor"].IDNumber'>
+    <input id='orderID' name='orderID' type='hidden' value='@Model["order"].IDNumber'>
+
+    <button type='submit'>Delete Order</button>
+  </form>
+
   <p><a href='/vendors/@Model["vendor"].IDNumber'>Back to @Model["vendor"].Name</a></p>
   <p><a href='/vendors'>Back to Vendors</a></p>
   <p><a href='/'>Return to Main Page</a></p>

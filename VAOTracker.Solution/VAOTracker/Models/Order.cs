@@ -36,5 +36,16 @@ namespace VAOTracker.Models
     {
       _listOfOrders.Clear();
     }
+
+    public void RemoveOrder()
+    {
+      _listOfOrders.Remove(this);
+    }
+
+    // public static void RemoveOrder(int searchID)
+    // {
+    //   int indexToBeRemoved = searchID - 1;
+    //   _listOfOrders.RemoveAt(indexToBeRemoved);
+    // }
   }
 }
