@@ -106,7 +106,7 @@ namespace VAOTracker.Tests
     [TestMethod]
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
-      Order newOrder = new("title", "description", "10", "September 29, 2023");
+      Order newOrder = new("title", "description", 10, "September 29, 2023");
       List<Order> newList = new() { newOrder };
       Vendor newVendor = new("Test Name", "Test description");
       newVendor.AddOrder(newOrder);

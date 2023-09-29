@@ -12,11 +12,11 @@ namespace VAOTracker.Models
     public int IDNumber { get; }
     private static List<Order> _listOfOrders = new();
 
-    public Order(string orderTitle, string orderDescription, string orderPrice, string orderDate)
+    public Order(string orderTitle, string orderDescription, int orderPrice, string orderDate)
     {
       Title = orderTitle;
       Description = orderDescription;
-      Price = Int32.Parse(orderPrice);
+      Price = orderPrice;
       Date = orderDate;
       _listOfOrders.Add(this);
       IDNumber = _listOfOrders.Count;
