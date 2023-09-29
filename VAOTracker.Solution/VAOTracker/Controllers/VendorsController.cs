@@ -37,5 +37,18 @@ namespace VAOTracker.Controllers
       model.Add("orders", vendorOrders);
       return View(model);
     }
+
+    [HttpPost("/vendors/{vendorID}/orders")]
+    public ActionResult Create(int vendorID, string orderTitle, string orderDescription, int orderPrice, string orderDate)
+    {
+      Dictionary<string, object> model = new();
+      Vendor foundVendor = Vendor.Find(vendorID);
+      Order newOrder = new(orderTitle, orderDescription, orderPrice, orderDate);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("vendor", foundVendor);
+      model.Add("orders", vendorOrders);
+      return View("Show", model);
+    }
   }
 }
