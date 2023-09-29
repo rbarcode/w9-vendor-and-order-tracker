@@ -10,7 +10,7 @@ namespace VAOTracker.Models
     public string Description { get; set; }
     public int IDNumber { get; }
     private static List<Vendor> _listOfVendors = new List<Vendor>();
-    // public List<Order> Orders { get; set; }
+    public List<Order> Orders { get; set; }
 
     public Vendor(string vendorName, string vendorDescription)
     {
@@ -18,7 +18,7 @@ namespace VAOTracker.Models
       Description = vendorDescription;
       _listOfVendors.Add(this);
       IDNumber = _listOfVendors.Count;
-      // Orders = new List<Order>();
+      Orders = new List<Order>();
     }
 
     public static Vendor Find(int searchID)
@@ -36,9 +36,9 @@ namespace VAOTracker.Models
       _listOfVendors.Clear();
     }
 
-    // public void AddOrder(Order order)
-    // {
-    //   Orders.Add(order);
-    // }
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
   }
 }
